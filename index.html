@@ -466,10 +466,11 @@ body{font-family:'Lora',serif;min-height:100vh;overflow:hidden;background:#fce4e
 ===================== */
 #page7{background:linear-gradient(160deg,#fce4ec,#ffd6e7,#ffb3c6);padding:14px;display:flex;flex-direction:column;}
 .memories-wrap{
-  width:100%;max-width:100%;
+  width:100%;max-width:480px;
   display:flex;flex-direction:column;
   align-items:center;gap:0;
   height:100vh;justify-content:center;
+  margin:0 auto;
 }
 .memories-title{
   font-family:'Dancing Script',cursive;
@@ -520,6 +521,30 @@ body{font-family:'Lora',serif;min-height:100vh;overflow:hidden;background:#fce4e
   margin-top:6px;flex-shrink:0;
 }
 .memories-nav{display:flex;gap:14px;margin-top:10px;justify-content:center;flex-shrink:0;}
+
+/* MOBILE — memories page */
+@media(max-width:600px){
+  #page7{padding:10px;overflow-y:auto;justify-content:flex-start;}
+  .memories-wrap{
+    height:auto;min-height:100vh;justify-content:flex-start;
+    padding:10px 0 20px;max-width:100%;
+  }
+  .photos-grid{
+    flex-direction:column;
+    max-height:none;overflow:visible;
+    gap:14px;padding:4px 2px;flex:none;
+  }
+  .photo-card{
+    flex:none;width:100%;
+    min-height:0;
+  }
+  .photo-card img{
+    width:100%;height:auto;max-height:65vw;
+    object-fit:cover;flex:none;
+  }
+  .memories-title{font-size:1.7rem;}
+  .memories-nav{margin-top:14px;}
+}
 
 /* CONFETTI */
 .confetti-piece{position:fixed;border-radius:50%;animation:confettiFall 2.5s ease forwards;pointer-events:none;z-index:999;}
